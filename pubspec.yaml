@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # The following adds any font listed in Google Fonts to your aplication.
+  google_fonts: ^2.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

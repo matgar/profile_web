@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:profile_web/strings.dart';
-import 'package:profile_web/styles.dart';
+import 'package:profile_web/core/strings.dart';
+import 'package:profile_web/core/styles.dart';
+import 'package:profile_web/widgets/panel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Matgar',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: const HomePage(title: 'Matgar\'s Profile'),
+      title: Strings.appTitle,
+      themeMode: ThemeMode.light,
+      theme: Styles.lightTheme,
+      darkTheme: Styles.darkTheme,
+      home: const HomePage(title: Strings.homeTitle),
     );
   }
 }
@@ -49,10 +50,12 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 14),
-              const Text(
-                Strings.profileDescription,
-                style: Styles.descriptionText,
-                textAlign: TextAlign.justify,
+              Panel(
+                child: Text(
+                  Strings.profileDescription,
+                  textAlign: TextAlign.justify,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
               ),
             ],
           ),
@@ -61,6 +64,8 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({Key? key, required this.title}) : super(key: key);
