@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_web/core/strings.dart';
 import 'package:profile_web/data/settings.dart';
 
 class ThemeModeActionButton extends StatelessWidget {
@@ -9,7 +10,17 @@ class ThemeModeActionButton extends StatelessWidget {
     return IconButton(
       onPressed: () => _changeMode(context),
       icon: Icon(_getIcon(context)),
+      tooltip: _getTooltip(context),
     );
+  }
+
+  String _getTooltip(BuildContext context) {
+    switch (Settings.of(context).resolvedBrightness()) {
+      case Brightness.dark:
+        return Strings.lightThemeActionTooltip;
+      case Brightness.light:
+        return Strings.darkThemeActionTooltip;
+    }
   }
 
   IconData _getIcon(BuildContext context) {

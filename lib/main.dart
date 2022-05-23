@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:profile_web/core/strings.dart';
 import 'package:profile_web/core/styles.dart';
 import 'package:profile_web/data/settings.dart';
+import 'package:profile_web/widgets/app_repository_action_button.dart';
 import 'package:profile_web/widgets/content_button.dart';
 import 'package:profile_web/widgets/content_tile.dart';
 import 'package:profile_web/widgets/outlined_panel.dart';
@@ -35,10 +36,10 @@ class ProfileApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-
   static const _emailUrl = 'mailto:matgar@gmail.com?subject=Contact&body=Hi!';
   static const _githubUrl = 'https://github.com/matgar';
   static const _linkedInUrl = 'https://linkedin.com/in/matgar';
+  static const _repositoryUrl = 'https://github.com/matgar/profile_web';
 
   final String title;
 
@@ -49,11 +50,16 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        actions: const [ThemeModeActionButton()],
+        actions: [
+          AppRepositoryActionButton(
+            onPressed: () => launchUrl(Uri.parse(_repositoryUrl)),
+          ),
+          const ThemeModeActionButton(),
+        ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
@@ -77,7 +83,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-               OutlinedPanel(
+              OutlinedPanel(
                 child: ContentTile(
                   title: const Text(Strings.contactPanelTitle),
                   children: [

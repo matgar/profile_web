@@ -28,6 +28,7 @@ class Styles {
 
   static ThemeData _themeData({required ColorScheme scheme}) => ThemeData(
         colorScheme: scheme,
+        primaryColor: scheme.secondary,
         textTheme: _textTheme,
         appBarTheme: AppBarTheme(
           elevation: 0,

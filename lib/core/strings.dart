@@ -8,4 +8,7 @@ class Strings {
   static const String emailAction = 'email';
   static const String githubAction = 'Github';
   static const String linkedInAction = 'LinkedIn';
+  static const String repositoryActionTooltip = 'Project repository';
+  static const String darkThemeActionTooltip = 'Dark mode';
+  static const String lightThemeActionTooltip = 'Light mode';
 }
