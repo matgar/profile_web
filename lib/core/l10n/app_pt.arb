@@ -1,0 +1,42 @@
+{
+    "homeTitle": "Perfil Matgar",
+    "@homeTitle": {
+      "description": "Home page title"
+    },
+    "profileDescription": "Olá, sou um desenvolvedor de software com foco em criar aplicações mobile, principalmente para Android (nativo e Flutter). Atualmente, trabalho para uma empresa, construindo apps que se comunicam via Bluetooth Low Energy com dispositivos proprietários. Git, testes automatizados, CI/CD, publicação de apps no Google Play, Scrum, arquitetura de software, trabalho em equipe são ferramentas e assuntos que estão presentes no meu dia a dia profissional e os quais sou interessado.",
+    "@profileDescription": {
+      "description": "An about me text, presenting some of skills and experiencies"
+    },
+    "contactPanelTitle": "Contato",
+    "@contactPanelTitle": {
+      "description": "Contact info panel title"
+    },
+    "emailAction": "email",
+    "@emailAction": {
+      "description": "Action name, for sending a contact email"
+    },
+    "githubAction": "Github",
+    "@githubAction": {
+      "description": "Action name, redirecting to Github profile page"
+    },
+    "linkedInAction": "LinkedIn",
+    "@linkedInAction": {
+      "description": "Action name, redirecting to LinkedIn profile page"
+    },
+    "repositoryActionTooltip": "Repositório do projeto",
+    "@repositoryActionTooltip": {
+      "description": "Tooltip text for the project repository's Github page"
+    },
+    "darkThemeActionTooltip": "Modo escuro",
+    "@darkThemeActionTooltip": {
+      "description": "Tooltip text for app's dark theme"
+    },
+    "lightThemeActionTooltip": "Modo claro",
+    "@lightThemeActionTooltip": {
+      "description": "Tooltip text for app's light theme"
+    },
+    "localeActionTooltip": "Idioma",
+    "@localeActionTooltip": {
+      "description": "Tooltip text for app's locale options"
+    }
+}

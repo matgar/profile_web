@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 
+Locale? _deviceLocale;
+Locale? get deviceLocale => _deviceLocale;
+set deviceLocale(Locale? locale) {
+  _deviceLocale = locale;
+}
+
 class Settings {
   final ThemeMode? themeMode;
+  final Locale? _locale;
 
-  const Settings._({this.themeMode = ThemeMode.system});
+  const Settings._({
+    this.themeMode = ThemeMode.system,
+    Locale? locale,
+  }) : _locale = locale;
 
   static Settings of(BuildContext context) {
     final scope =
         context.dependOnInheritedWidgetOfExactType<_SettingsBindingScope>()!;
     return scope.settingsBindingState.currentSettings;
   }
+
+  Locale? get locale => _locale ?? deviceLocale;
 
   Brightness resolvedBrightness() {
     switch (themeMode) {
@@ -22,16 +34,23 @@ class Settings {
     }
   }
 
-  Settings copyWith({ThemeMode? themeMode}) => Settings._(
+  Settings copyWith({
+    ThemeMode? themeMode,
+    Locale? locale,
+  }) =>
+      Settings._(
         themeMode: themeMode ?? this.themeMode,
+        locale: locale ?? this.locale,
       );
 
   @override
   bool operator ==(Object other) =>
-      other is Settings && themeMode == other.themeMode;
+      other is Settings &&
+      themeMode == other.themeMode &&
+      locale == other.locale;
 
   @override
-  int get hashCode => Object.hashAll([themeMode]);
+  int get hashCode => Object.hash(themeMode, locale);
 
   static void update(BuildContext context, Settings settings) {
     final scope =

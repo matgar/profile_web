@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:profile_web/core/strings.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppRepositoryActionButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -13,7 +14,7 @@ class AppRepositoryActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      tooltip: Strings.repositoryActionTooltip,
+      tooltip: AppLocalizations.of(context)!.repositoryActionTooltip,
       icon: const Icon(Icons.code),
     );
   }

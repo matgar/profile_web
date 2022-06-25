@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:profile_web/core/strings.dart';
 import 'package:profile_web/data/settings.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ThemeModeActionButton extends StatelessWidget {
   const ThemeModeActionButton({Key? key}) : super(key: key);
@@ -15,11 +16,12 @@ class ThemeModeActionButton extends StatelessWidget {
   }
 
   String _getTooltip(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     switch (Settings.of(context).resolvedBrightness()) {
       case Brightness.dark:
-        return Strings.lightThemeActionTooltip;
+        return localizations.lightThemeActionTooltip;
       case Brightness.light:
-        return Strings.darkThemeActionTooltip;
+        return localizations.darkThemeActionTooltip;
     }
   }
 
