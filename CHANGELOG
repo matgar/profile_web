@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2022-08-09
+
+- Constraining HomePage size for desktop screens.
+- Google Fonts as assets, disabling network fetch.
+- Support for localization, English and Portuguese.
+- Style improvements, theme data primary and secondary colors.
+
 ## [0.0.1] - 2022-05-22
 ### Added
 - Light and dark themes. An action button on home page app bar can switch between both.
