@@ -1,11 +1,11 @@
 {
-    "name": "Matgar website",
+    "name": "Matgar's profile",
     "short_name": "Matgar",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Matgar - developer site",
+    "description": "My personal profile website - Flutter",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
