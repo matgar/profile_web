@@ -75,57 +75,62 @@ class HomePage extends StatelessWidget {
           const ThemeModeActionButton(),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                height: 240,
-                width: 240,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/profile-pic.png'),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 900),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: 240,
+                    width: 240,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/profile-pic.png'),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              const SizedBox(height: 14),
-              Panel(
-                child: Text(
-                  localizations.profileDescription,
-                  textAlign: TextAlign.justify,
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ),
-              const SizedBox(height: 24),
-              OutlinedPanel(
-                child: ContentTile(
-                  title: Text(localizations.contactPanelTitle),
-                  children: [
-                    ContentButton(
-                      icon: const FaIcon(FontAwesomeIcons.github),
-                      label: Text(localizations.githubAction),
-                      onPressed: () => launchUrl(Uri.parse(_githubUrl)),
+                  const SizedBox(height: 14),
+                  Panel(
+                    child: Text(
+                      localizations.profileDescription,
+                      textAlign: TextAlign.justify,
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
-                    const SizedBox(width: 6),
-                    ContentButton(
-                      icon: const FaIcon(FontAwesomeIcons.linkedinIn),
-                      label: Text(localizations.linkedInAction),
-                      onPressed: () => launchUrl(Uri.parse(_linkedInUrl)),
+                  ),
+                  const SizedBox(height: 24),
+                  OutlinedPanel(
+                    child: ContentTile(
+                      title: Text(localizations.contactPanelTitle),
+                      children: [
+                        ContentButton(
+                          icon: const FaIcon(FontAwesomeIcons.github),
+                          label: Text(localizations.githubAction),
+                          onPressed: () => launchUrl(Uri.parse(_githubUrl)),
+                        ),
+                        const SizedBox(width: 6),
+                        ContentButton(
+                          icon: const FaIcon(FontAwesomeIcons.linkedinIn),
+                          label: Text(localizations.linkedInAction),
+                          onPressed: () => launchUrl(Uri.parse(_linkedInUrl)),
+                        ),
+                        const SizedBox(width: 6),
+                        ContentButton(
+                          icon: const Icon(Icons.email),
+                          label: Text(localizations.emailAction),
+                          onPressed: () => launchUrl(Uri.parse(_emailUrl)),
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 6),
-                    ContentButton(
-                      icon: const Icon(Icons.email),
-                      label: Text(localizations.emailAction),
-                      onPressed: () => launchUrl(Uri.parse(_emailUrl)),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
